@@ -68,6 +68,7 @@ export const RewardCard: React.FC<RewardCardProps> = ({ reward }) => {
           onClick={handleRedeem}
           disabled={points < reward.pointsCost}
           width="100%"
+          borderRadius="3xl"
         >
           {points >= reward.pointsCost ? 'Redeem' : 'Not Enough Points'}
         </Button>

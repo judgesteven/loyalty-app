@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { User, Mission, Achievement } from '../types';
 import { gameLayerService } from '../services/gameLayerService';
+import { mockMissions, mockAchievements } from '../services/mockData';
 
 interface LoyaltyContextType {
   user: User | null;
@@ -43,8 +44,8 @@ export const LoyaltyProvider: React.FC<{ children: React.ReactNode }> = ({ child
           completedMissions: [],
         };
         setUser(mockUser);
-        setMissions(gameLayerService.getMockMissions());
-        setAchievements(gameLayerService.getMockAchievements());
+        setMissions(mockMissions);
+        setAchievements(mockAchievements);
       } catch (err) {
         setError('Failed to fetch user data');
         console.error(err);

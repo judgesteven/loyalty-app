@@ -5,18 +5,23 @@ import { LoyaltyProvider } from './context/LoyaltyContext';
 import { LoyaltyProgram } from './pages/LoyaltyProgram';
 import { Store } from './pages/Store';
 import { Navigation } from './components/Navigation';
+import { Footer } from './components/Footer';
+import theme from './theme';
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <LoyaltyProvider>
         <Router>
-          <Box minH="100vh" bg="gray.50">
+          <Box minH="100vh" display="flex" flexDirection="column">
             <Navigation />
-            <Routes>
-              <Route path="/" element={<Store />} />
-              <Route path="/loyalty" element={<LoyaltyProgram />} />
-            </Routes>
+            <Box flex="1">
+              <Routes>
+                <Route path="/" element={<Store />} />
+                <Route path="/loyalty" element={<LoyaltyProgram />} />
+              </Routes>
+            </Box>
+            <Footer />
           </Box>
         </Router>
       </LoyaltyProvider>

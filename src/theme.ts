@@ -1,12 +1,6 @@
-import { extendTheme, type ThemeConfig } from '@chakra-ui/react';
-
-const config: ThemeConfig = {
-  initialColorMode: 'light',
-  useSystemColorMode: false,
-};
+import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
-  config,
   colors: {
     brand: {
       50: '#f5f3ff',
@@ -22,14 +16,22 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: '"Poppins", sans-serif',
-    body: '"Inter", sans-serif',
+    heading: 'Inter, system-ui, sans-serif',
+    body: 'Inter, system-ui, sans-serif',
+  },
+  styles: {
+    global: {
+      body: {
+        bg: 'gray.50',
+        color: 'gray.800',
+      },
+    },
   },
   components: {
     Button: {
       baseStyle: {
         fontWeight: 'semibold',
-        borderRadius: 'md',
+        borderRadius: '2xl',
       },
       variants: {
         solid: {
@@ -37,6 +39,11 @@ const theme = extendTheme({
           color: 'white',
           _hover: {
             bg: 'brand.600',
+            transform: 'translateY(-1px)',
+            boxShadow: 'lg',
+          },
+          _active: {
+            bg: 'brand.700',
           },
         },
       },
@@ -44,18 +51,26 @@ const theme = extendTheme({
     Card: {
       baseStyle: {
         container: {
-          borderRadius: 'lg',
+          borderRadius: 'xl',
           boxShadow: 'sm',
+          transition: 'all 0.2s',
+          _hover: {
+            transform: 'translateY(-2px)',
+            boxShadow: 'md',
+          },
         },
       },
     },
-  },
-  styles: {
-    global: {
-      body: {
-        bg: 'gray.50',
+    Heading: {
+      baseStyle: {
+        fontWeight: 'bold',
+        letterSpacing: 'tight',
       },
     },
+  },
+  config: {
+    initialColorMode: 'light',
+    useSystemColorMode: false,
   },
 });
 
