@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Mission, Achievement, User } from '../types';
+import { Mission, Achievement } from '../types';
 
 const API_KEY = import.meta.env.VITE_GAMELAYER_API_KEY;
 const BASE_URL = 'https://api.gamelayer.co/v1';
