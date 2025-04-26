@@ -62,6 +62,8 @@ export const gameLayerService = {
       type: 'purchase',
       requirements: { type: 'purchase', value: 1 },
       isCompleted: false,
+      difficulty: 'easy',
+      startedAt: new Date().toISOString(),
     },
     {
       id: '2',
@@ -71,6 +73,8 @@ export const gameLayerService = {
       type: 'review',
       requirements: { type: 'review', value: 1 },
       isCompleted: false,
+      difficulty: 'medium',
+      startedAt: new Date().toISOString(),
     },
     {
       id: '3',
@@ -80,6 +84,8 @@ export const gameLayerService = {
       type: 'social',
       requirements: { type: 'social', value: 1 },
       isCompleted: false,
+      difficulty: 'easy',
+      startedAt: new Date().toISOString(),
     },
   ],
 

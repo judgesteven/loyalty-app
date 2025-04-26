@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Box,
   Container,
-  Grid,
   Heading,
   Text,
   SimpleGrid,
@@ -20,12 +19,10 @@ import {
 } from '@chakra-ui/react';
 import { mockProducts } from '../services/mockData';
 import { Product } from '../types';
-import { useLoyalty } from '../context/LoyaltyContext';
 
 export const Store: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const { updatePoints } = useLoyalty();
   const toast = useToast();
 
   const categories = ['all', ...new Set(mockProducts.map(product => product.category))];
